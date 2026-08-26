@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ayush Neupane — BITM student exploring UI/UX, creative technology and business." />
+  <title>Ayush Neupane — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ink" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ayush Neupane home">AN<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions"><button class="ask-trigger" type="button" aria-haspopup="dialog">Ask Ayush <span>✦</span></button><a class="header-cta" href="#contact">Let's connect <span>↗</span></a></div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">BITM STUDENT · CREATIVE · BUSINESS MINDED</p>
+        <!-- CHANGE QUOTES HERE: edit the quote list in script.js. A new quote appears on every refresh. -->
+        <p class="quote-signature" id="daily-quote" aria-live="polite"></p>
+        <h1>Ayush<br><em>Neupane.</em></h1>
+        <p class="hero-role">UI/UX enthusiast <b>·</b> Video editor <b>·</b> Business thinker</p>
+        <p class="hero-text">
+          I’m a BITM student exploring how design, technology
+          and business can come together to create useful ideas.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-fill" href="#work">View my work <span>↗</span></a>
+          <a class="button" href="#contact">Let's talk <span>→</span></a>
+        </div>
+        <div class="socials" aria-label="Social links">
+          <a href="https://github.com/a4yush9" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/ayush-neupane-7378153a1/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+          <a href="https://wa.me/9779819169972" target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap reveal">
+        <!-- CHANGE YOUR MAIN PHOTO HERE: replace images/profile-sample.jpg with your preferred image. -->
+        <div class="photo-frame">
+          <img src="images/profile.jpeg" alt="Ayush Neupane portrait" />
+          <div class="photo-label">AYUSH NEUPANE / 2026</div>
+        </div>
+        <div class="vertical-note">LEARNING · BUILDING · GROWING</div>
+      </div>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="info-strip reveal">
+      <div><span>01</span><strong>Education</strong><p>BITM · 2nd Semester</p></div>
+      <div><span>02</span><strong>Focus</strong><p>UI/UX · Video · Business</p></div>
+      <div><span>03</span><strong>Approach</strong><p>Teamwork · Leadership · Learning</p></div>
+      <div><span>04</span><strong>Goal</strong><p>Business Manager & Implementer</p></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section split" id="about">
+      <div class="section-label reveal">ABOUT ME</div>
+      <div class="about-content reveal">
+        <h2>Curious mind.<br><em>Business heart.</em></h2>
+        <p class="lead">
+          I enjoy learning across design, technology and business instead of
+          staying inside one box.
+        </p>
+        <p>
+          My current journey is about building a strong foundation through my
+          BITM studies, experimenting with UI/UX and video editing, and applying what
+          I learn to practical situations.
+        </p>
+        <div class="trait-list">
+          <span>Teamwork</span><span>Fast learner</span><span>Leadership</span>
+          <span>Problem solving</span><span>Calm mindset</span>
+        </div>
+        <!-- CHANGE YOUR ABOUT PHOTO HERE: this is a second crop/treatment of your own photo. -->
+        <figure class="about-portrait">
+          <img src="images/profile-sample.jpg" alt="Ayush Neupane" loading="lazy" /><figcaption>STILL LEARNING / STILL BUILDING</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work-section" id="work">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-label">SELECTED WORK</p>
+          <h2>Things I’ve been building.</h2>
+        </div>
+        <p>Small projects, real learning, steady progress.</p>
+      </div>
+
+      <article class="project-card reveal">
+        <div class="project-visual">
+          <!-- CHANGE PROJECT IMAGE HERE: replace images/c-programming.jpg with an image of your real project when you have one. -->
+          <img class="project-support-image" src="images/c-programming.jpg" alt="Programming workspace with C code" loading="lazy" />
+          <div class="terminal">
+            <div class="terminal-top"><i></i><i></i><i></i><span>grocery_management.c</span></div>
+            <pre>*** GROCERY MANAGEMENT SYSTEM ***
+
+1. Add Item
+2. View Items
+3. Edit Item
+4. Delete Item
+5. Sell Item
+6. Exit
+
+Enter your choice: _</pre>
+          </div>
+        </div>
+        <div class="project-content">
+          <p class="eyebrow">01 / C MINI PROJECT · 1ST SEMESTER</p>
+          <h3>Grocery Management System</h3>
+          <p>
+            A console-based C project created during my first semester to
+            practice programming logic and build a simple way to manage
+            grocery records.
+          </p>
+          <ul class="check-list">
+            <li>Add, store, edit and delete grocery items</li>
+            <li>Sell items and update stock</li>
+            <li>View records and totals</li>
+            <li>Practice file handling and structured logic</li>
+          </ul>
+          <a class="text-link" href="https://github.com/a4yush9" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience-section" id="experience">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-label">PRACTICAL EXPERIENCE</p>
+          <h2>Learning by doing.</h2>
+        </div>
+        <p>Using what I learn in a real-world family business.</p>
+      </div>
+
+      <article class="experience-card reveal">
+        <div class="experience-top">
+          <div>
+            <p class="eyebrow">FAMILY BUSINESS · POKHARA, NEPAL</p>
+            <h3>Global Suppliers</h3>
+            <p class="experience-role">Online Sales, Marketing & Management</p>
+          </div>
+          <button class="expand-button" type="button" aria-expanded="false">
+            View experience <span>+</span>
+          </button>
+        </div>
+        <p class="experience-summary">
+          Contributing to the management of my family’s gemstones and jewellery
+          business, with a primary focus on online sales, digital marketing,
+          video content and the business’s overall online presence.
+        </p>
+        <div class="experience-media" aria-label="Natural crystals and gemstone beads related to Global Suppliers">
+          <!-- CHANGE GLOBAL SUPPLIERS PHOTOS HERE: use your own product photos when available. These images are topic references, not company claims. -->
+          <figure><img src="images/global-suppliers-crystals.jpg" alt="Natural crystal detail" loading="lazy" /><figcaption>NATURAL CRYSTALS</figcaption></figure>
+          <figure><img src="images/gemstone-beads.jpg" alt="Natural gemstone beads" loading="lazy" /><figcaption>GEMSTONE BEADS</figcaption></figure>
+        </div>
+
+        <div class="experience-details">
+          <div><span>01</span><h4>Online Sales</h4><p>Managing digital inquiries, communicating with customers, presenting products, assisting with selection, orders and follow-ups.</p></div>
+          <div><span>02</span><h4>Digital Marketing</h4><p>Managing social presence, planning content, creating promotions and helping promote products through TikTok and Instagram.</p></div>
+          <div><span>03</span><h4>Video & Content</h4><p>Creating and editing product videos, short-form promotional content and platform-specific product presentations.</p></div>
+          <div><span>04</span><h4>Business Management</h4><p>Supporting day-to-day operations, product presentation, promotional discussions and ideas that improve online sales.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
+      <div class="skills-intro reveal">
+        <p class="section-label">SKILLS & INTERESTS</p>
+        <h2>Still learning.<br><em>Already applying.</em></h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill"><strong>UI/UX</strong><span>Exploring</span><div class="meter"><i style="width:72%"></i></div></div>
+        <div class="skill"><strong>Video Editing</strong><span>Exploring</span><div class="meter"><i style="width:68%"></i></div></div>
+        <div class="skill"><strong>C Programming</strong><span>Foundation</span><div class="meter"><i style="width:62%"></i></div></div>
+        <div class="skill"><strong>Business & Management</strong><span>Practical</span><div class="meter"><i style="width:78%"></i></div></div>
+        <div class="skill"><strong>Communication</strong><span>Strong</span><div class="meter"><i style="width:76%"></i></div></div>
+        <div class="skill"><strong>Teamwork</strong><span>Strong</span><div class="meter"><i style="width:84%"></i></div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="contact-card reveal">
+        <p class="section-label">LET'S CONNECT</p>
+        <h2>Have an idea?<br><em>Let’s talk.</em></h2>
+        <p>
+          I’m open to learning opportunities, creative collaborations and
+          conversations around design, technology and business.
+        </p>
+        <div class="contact-actions">
+          <a class="button button-light" href="mailto:ayshneupane100@gmail.com">Email me <span>↗</span></a>
+          <a class="button button-light-outline" href="https://wa.me/9779819169972" target="_blank" rel="noreferrer">WhatsApp <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- IMPORTANT SECURITY WHEN HOSTING: Do not post API keys, .env files, passwords, private customer data or admin links in this website. Ask Ayush must use a protected server endpoint. -->
+  <!-- ASK AYUSH: This is intentionally a secure-backend placeholder. Never put an AI API key in script.js or index.html. -->
+  <dialog class="ask-dialog" aria-labelledby="ask-title">
+    <button class="ask-close" type="button" aria-label="Close Ask Ayush">×</button>
+    <p class="section-label">ASK AYUSH</p><h2 id="ask-title">A secure portfolio assistant.</h2>
+    <p>This feature is ready for a secure backend connection. It does not collect questions or use an AI key in this website.</p>
+    <p class="dialog-note">Before enabling it, connect a protected <code>/api/chat</code> endpoint with rate limits, validation and a server-side environment variable. See <code>backend/README.md</code>.</p>
+  </dialog>
+
+  <footer>
+    <div class="footer-brand">AN<span>.</span><p>Exploring ideas.<br>Building skills.<br>Creating impact.</p></div>
+    <div><p class="footer-label">LINKS</p><a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a></div>
+    <div><p class="footer-label">CONNECT</p><a href="https://github.com/a4yush9" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ayush-neupane-7378153a1/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://wa.me/9779819169972" target="_blank" rel="noreferrer">WhatsApp</a></div>
+    <div><p class="footer-label">LOCATION</p><p>Pokhara, Nepal</p><p class="muted">BITM · 2nd Semester</p></div>
+    <div class="copyright">© 2026 Ayush Neupane · Personal portfolio</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
