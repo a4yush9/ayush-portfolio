@@ -246,12 +246,14 @@ Enter your choice: _</pre>
     const query = input.value.trim();
     if (!query) return;
 
-    box.innerHTML += `<div style="text-align: right; background: rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 8px; font-size: 14px; align-self: flex-end; max-width: 85%;">${query}</div>`;
+    // Display user prompt
+    box.innerHTML += `<div style="text-align: right; background: rgba(255,255,255,0.15); color: #fff; padding: 10px 14px; border-radius: 12px; font-size: 14px; align-self: flex-end; max-width: 80%; margin-bottom: 8px;">${query}</div>`;
     input.value = '';
     box.scrollTop = box.scrollHeight;
 
+    // Loading indicator
     const loadingId = 'loading-' + Date.now();
-    box.innerHTML += `<div id="${loadingId}" style="background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; font-size: 14px; align-self: flex-start;">Thinking...</div>`;
+    box.innerHTML += `<div id="${loadingId}" style="background: rgba(255,255,255,0.05); color: #aaa; padding: 10px 14px; border-radius: 12px; font-size: 14px; align-self: flex-start; margin-bottom: 8px;">Thinking...</div>`;
     box.scrollTop = box.scrollHeight;
 
     try {
@@ -262,19 +264,17 @@ Enter your choice: _</pre>
       });
       const data = await response.json();
       document.getElementById(loadingId).remove();
-      
-      // Catches all potential response key names
-      const replyText = data.reply || data.response || data.message || data.text || (typeof data === 'string' ? data : JSON.stringify(data));
-      
-      box.innerHTML += `<div style="background: rgba(255,255,255,0.08); padding: 8px 12px; border-radius: 8px; font-size: 14px; align-self: flex-start; max-width: 85%; line-height: 1.4;">${replyText}</div>`;
+
+      const replyText = data.reply || "No response received.";
+      box.innerHTML += `<div style="background: rgba(255,255,255,0.08); color: #eee; padding: 10px 14px; border-radius: 12px; font-size: 14px; align-self: flex-start; max-width: 85%; line-height: 1.5; margin-bottom: 8px;">${replyText}</div>`;
     } catch (err) {
       document.getElementById(loadingId).remove();
-      box.innerHTML += `<div style="color: #ff6b6b; font-size: 14px; background: rgba(255,0,0,0.1); padding: 8px; border-radius: 6px;">Connection error: Check Cloudflare CORS settings.</div>`;
+      box.innerHTML += `<div style="color: #ff6b6b; font-size: 13px; background: rgba(255,0,0,0.1); padding: 8px 12px; border-radius: 8px; margin-bottom: 8px;">Connection issue. Try again.</div>`;
     }
     box.scrollTop = box.scrollHeight;
   }
 
-  document.getElementById('modal-user-input').addEventListener('keypress', function (e) {
+  document.getElementById('modal-user-input')?.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') sendModalMessage();
   });
 </script>
