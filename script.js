@@ -170,41 +170,59 @@ expandButton?.addEventListener("click", () => {
   }
 });
 
-// Subtle ink trail following the mouse.
-// On touch devices this automatically does nothing.
-const dot = document.querySelector(".cursor-dot");
+// Subtle ink trail following the mouse across all layers (including modals)
 const ink = document.querySelector(".cursor-ink");
 let mouseX = -100, mouseY = -100;
 let inkX = -100, inkY = -100;
 let lastDrop = 0;
 
-if (dot && ink) {
+if (ink) {
+  // Capture phase listener (true) catches movement inside modals
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 
     const now = Date.now();
-    if (now - lastDrop > 65) {
+    if (now - lastDrop > 50) {
       const drop = document.createElement("span");
       drop.className = "ink-drop";
       drop.style.left = mouseX + "px";
       drop.style.top = mouseY + "px";
-      document.body.appendChild(drop);
-      setTimeout(() => drop.remove(), 800);
+
+      // Append inside open dialog so browser top-layer doesn't block it
+      if (askDialog && askDialog.open) {
+        askDialog.appendChild(drop);
+      } else {
+        document.body.appendChild(drop);
+      }
+
+      setTimeout(() => drop.remove(), 750);
       lastDrop = now;
     }
-  });
+  }, true);
 
   function animateCursor() {
-    inkX += (mouseX - inkX) * 0.14;
-    inkY += (mouseY - inkY) * 0.14;
-    dot.style.left = mouseX + "px";
-    dot.style.top = mouseY + "px";
+    inkX += (mouseX - inkX) * 0.16;
+    inkY += (mouseY - inkY) * 0.16;
+
     ink.style.left = inkX + "px";
     ink.style.top = inkY + "px";
+
     requestAnimationFrame(animateCursor);
   }
   animateCursor();
+
+  // Move soft ink glow into dialog when open
+  if (askDialog) {
+    const dialogObserver = new MutationObserver(() => {
+      if (askDialog.open) {
+        askDialog.appendChild(ink);
+      } else {
+        document.body.appendChild(ink);
+      }
+    });
+    dialogObserver.observe(askDialog, { attributes: true, attributeFilter: ["open"] });
+  }
 }
 
 // Small magnetic-feeling movement on desktop buttons.
