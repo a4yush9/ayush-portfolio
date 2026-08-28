@@ -30,7 +30,19 @@ body {
     "Segoe UI", sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: default !important; /* Forces normal system arrow cursor */
+}
+
+/* Maintain normal native cursors everywhere */
+html, body, button, a, input, textarea, select, dialog, dialog * {
+  cursor: auto !important;
+}
+
+button, a, .ask-trigger, .ask-close, .expand-button {
+  cursor: pointer !important;
+}
+
+input[type="text"], textarea {
+  cursor: text !important;
 }
 
 a {
@@ -719,31 +731,38 @@ footer > div:not(.copyright) p {
 
 .cursor-ink {
   position: fixed;
-  z-index: 999998 !important;
-  width: 24px;
-  height: 24px;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: rgba(201, 133, 75, 0.2);
+  background: rgba(201, 133, 75, 0.25);
   pointer-events: none !important;
   transform: translate(-50%, -50%);
-  filter: blur(6px);
-  transition: transform 0.08s ease-out;
+  filter: blur(5px);
+  z-index: 2147483647 !important;
 }
 
 .ink-drop {
   position: fixed;
-  z-index: 999997 !important;
+  top: 0;
+  left: 0;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: rgba(201, 133, 75, 0.45);
   pointer-events: none !important;
-  animation: ink 0.75s forwards;
+  z-index: 2147483646 !important;
+  animation: ink 0.75s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
 }
 
 @keyframes ink {
-  to {
-    transform: scale(3.5);
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
     opacity: 0;
   }
 }
